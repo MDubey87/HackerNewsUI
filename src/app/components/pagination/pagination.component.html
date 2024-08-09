@@ -1,0 +1,13 @@
+<nav *ngIf="pager.pages && pager.pages.length">
+    <ul class="pagination justify-content-center align-items-center">
+        <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}"><a class="page-link"
+                (click)="setPage(pager.currentPage - 1)"> Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" class="page-item">
+            <a (click)="setPage(page)" class="page-link">{{page}}</a>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+    </ul>
+</nav>

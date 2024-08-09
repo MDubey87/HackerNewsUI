@@ -1,0 +1,13 @@
+<app-load-spinner [showSpinner]="showSpinner"></app-load-spinner>
+<div class="alert alert-danger" role="alert" *ngIf="showErrorMessage">
+    Service is unavaliable. Please try again later.
+</div>
+<ul class="list-group app-margin-top" *ngIf="filteredStories.length >0">
+    <li *ngFor="let story of pageOfItems" class="list-group-item list-group-item-action text-wrap">
+        <h4>{{story.title}}</h4>
+        <p><a [attr.href]="story.url" target="_blank">{{story.url}}</a></p>
+    </li>
+</ul>
+<div class="app-margin-top10">
+    <app-pagination [itemList]="filteredStories" (changePageEvent)="onPageChange($any($event))"></app-pagination>
+</div>
