@@ -59,8 +59,9 @@ export class StoriesListComponent implements OnInit, OnChanges {
     this.filteredStories = this.stories.filter(
       (story) =>
         (!this.isNullorEmpty(story.title) &&
-          story.title.includes(searchText)) ||
-        (!this.isNullorEmpty(story.url) && story.url.includes(searchText))
+          story.title.toLowerCase().includes(searchText.toLowerCase())) ||
+        (!this.isNullorEmpty(story.url) &&
+          story.url.toLowerCase().includes(searchText.toLowerCase()))
     );
   }
 
