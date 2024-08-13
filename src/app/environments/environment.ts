@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://hackernews.azurewebsites.net/api',
+  apiBaseUrl: 'https://localhost:5000/api',
 };
